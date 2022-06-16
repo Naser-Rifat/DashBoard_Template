@@ -1,6 +1,7 @@
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { ImBrightnessContrast } from "react-icons/im";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiNotification3Line } from "react-icons/ri";
 
@@ -66,12 +67,18 @@ const Navbar = () => {
       />
       <div className="flex">
         <NavButton
+          title="Dark/Light mode"
+          color={currentColor}
+          icon={<ImBrightnessContrast />}
+        />
+        <NavButton
           title="Notification"
           dotColor="rgb(254, 201, 15)"
           customFunc={() => handleClick("notification")}
           color={currentColor}
           icon={<RiNotification3Line />}
         />
+
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
             className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
