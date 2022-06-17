@@ -1,8 +1,8 @@
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { ImBrightnessContrast } from "react-icons/im";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { BsBrightnessHighFill } from "react-icons/bs";
+import { MdBrightness2, MdKeyboardArrowDown } from "react-icons/md";
 import { RiNotification3Line } from "react-icons/ri";
 
 import { Notification, UserProfile } from ".";
@@ -35,6 +35,8 @@ const Navbar = () => {
     isClicked,
     setScreenSize,
     screenSize,
+    setMode,
+    currentMode,
   } = useStateContext();
 
   useEffect(() => {
@@ -66,11 +68,42 @@ const Navbar = () => {
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
-        <NavButton
+        <div className="mt-2">
+          <input
+            type="radio"
+            id="light"
+            name="theme"
+            value="Light"
+            onChange={setMode}
+            className="cursor-pointer hidden"
+            checked={currentMode === "Light"}
+          />
+          <label htmlFor="light" className="ml-2 text-md cursor-pointer">
+            <BsBrightnessHighFill
+              color={currentColor}
+              className="inline text-xl"
+            />
+          </label>
+        </div>
+        <div className="mt-2">
+          <input
+            type="radio"
+            id="dark"
+            name="theme"
+            value="Dark"
+            className="cursor-pointer hidden"
+            onChange={setMode}
+            checked={currentMode === "Dark"}
+          />
+          <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
+            <MdBrightness2 className="inline text-xl dark:text-gray-100" />
+          </label>
+        </div>
+        {/* <NavButton
           title="Dark/Light mode"
           color={currentColor}
           icon={<ImBrightnessContrast />}
-        />
+        /> */}
         <NavButton
           title="Notification"
           dotColor="rgb(254, 201, 15)"

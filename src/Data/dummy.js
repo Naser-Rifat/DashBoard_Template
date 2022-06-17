@@ -5,17 +5,17 @@ import {
   BsShield,
 } from "react-icons/bs";
 import { FaCodeBranch } from "react-icons/fa";
+import { FcLeave } from "react-icons/fc";
 import {
   FiBarChart,
   FiCreditCard,
-  FiShoppingBag,
   FiShoppingCart,
   FiStar,
 } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
 import { HiOutlineRefresh } from "react-icons/hi";
 import { IoMdContacts } from "react-icons/io";
-import { MdOutlineSupervisorAccount } from "react-icons/md";
+import { MdDashboard, MdOutlineSupervisorAccount } from "react-icons/md";
 import { RiContactsLine } from "react-icons/ri";
 import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
@@ -499,8 +499,8 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "Overview",
-        icon: <FiShoppingBag />,
+        name: "overview",
+        icon: <MdDashboard />,
       },
     ],
   },
@@ -509,7 +509,7 @@ export const links = [
     title: "Pages",
     links: [
       {
-        name: "Branch",
+        name: "branch",
         icon: <FaCodeBranch />,
       },
       {
@@ -517,7 +517,31 @@ export const links = [
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
+        name: "leave",
+        icon: <FcLeave />,
+      },
+      {
+        name: "review",
+        icon: <IoMdContacts />,
+      },
+      {
+        name: "report",
+        icon: <IoMdContacts />,
+      },
+      {
+        name: "manage",
+        icon: <RiContactsLine />,
+      },
+      {
+        name: "documents",
+        icon: <RiContactsLine />,
+      },
+      {
+        name: "profile",
+        icon: <RiContactsLine />,
+      },
+      {
+        name: "settings",
         icon: <RiContactsLine />,
       },
     ],
